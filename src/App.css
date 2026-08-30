@@ -6,6 +6,11 @@
   scroll-margin-top: 8.15rem;
 }
 
+#main {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 @media (max-width: 1099px) {
   .page-section,
   #home {

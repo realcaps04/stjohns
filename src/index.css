@@ -35,6 +35,8 @@
 
 html {
   scroll-behavior: auto;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 html.lenis {
@@ -45,6 +47,11 @@ html,
 body,
 #root {
   min-height: 100%;
+  max-width: 100%;
+}
+
+#root {
+  overflow-x: clip;
 }
 
 body {
@@ -54,7 +61,7 @@ body {
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
