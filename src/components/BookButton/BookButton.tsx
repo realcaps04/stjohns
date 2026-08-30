@@ -6,6 +6,7 @@ type BookButtonProps = {
   className?: string
   compact?: boolean
   full?: boolean
+  label?: string
 }
 
 export function BookButton({
@@ -13,6 +14,7 @@ export function BookButton({
   className = '',
   compact = false,
   full = false,
+  label = 'Book Appointment',
 }: BookButtonProps) {
   const classes = [
     'book-btn',
@@ -26,7 +28,7 @@ export function BookButton({
   return (
     <a className={classes} href={href}>
       <CalendarIcon className="book-btn__icon" />
-      <span className="book-btn__label">Book Appointment</span>
+      <span className="book-btn__label">{label}</span>
     </a>
   )
 }

@@ -29,8 +29,8 @@
 
 @media (max-width: 414px) {
   .logo {
-    height: 2.45rem;
-    max-width: min(12rem, 62vw);
+    height: 2.35rem;
+    max-width: min(9.5rem, 38vw);
   }
 }
 

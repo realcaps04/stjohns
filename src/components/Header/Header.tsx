@@ -190,6 +190,11 @@ export function Header() {
 
           <div className="header-actions">
             <FindDoctorButton className="header-actions__find" />
+            <BookButton className="header-actions__book header-actions__book--desktop" />
+            <BookButton
+              className="header-actions__book header-actions__book--mobile"
+              label="Book my appointment"
+            />
 
             {!isDesktop && (
               <button
@@ -203,8 +208,6 @@ export function Header() {
                 {menuOpen ? <CloseIcon className="icon-btn__glyph" /> : <MenuIcon className="icon-btn__glyph" />}
               </button>
             )}
-
-            <BookButton className="header-actions__book" />
           </div>
         </div>
       </header>
@@ -245,9 +248,6 @@ export function Header() {
         </div>
       </div>
 
-      <div className="mobile-book-bar">
-        <BookButton full />
-      </div>
     </>
   )
 }

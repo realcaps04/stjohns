@@ -249,6 +249,9 @@
   .hero__visual {
     min-height: 0;
     margin-top: 0.4rem;
+    max-width: min(100%, 28rem);
+    margin-inline: auto;
+    width: 100%;
   }
 
   .hero__photo-wrap {
@@ -256,7 +259,8 @@
     inset: auto;
     border-radius: 1.6rem;
     overflow: hidden;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 5 / 4;
+    max-height: 20rem;
     background: transparent;
     -webkit-mask-image: none;
     mask-image: none;
@@ -289,6 +293,7 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero__photo-wrap {
     aspect-ratio: 5 / 4;
+    max-height: 22rem;
   }
 }
 
@@ -297,9 +302,14 @@
     width: min(calc(100% - 1.5rem), var(--max));
   }
 
+  .hero__visual {
+    max-width: min(88%, 18.5rem);
+  }
+
   .hero__photo-wrap {
-    aspect-ratio: 3 / 4;
-    border-radius: 1.35rem;
+    aspect-ratio: 4 / 3;
+    max-height: 14.5rem;
+    border-radius: 1.2rem;
   }
 
   .hero__body {
