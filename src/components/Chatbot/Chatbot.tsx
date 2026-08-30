@@ -48,7 +48,7 @@ export function Chatbot() {
             <div className="chatbot__header-copy">
               <img
                 className="chatbot__avatar"
-                src="/images/chatbot-icon.jpg"
+                src="/images/chatbot-icon.png"
                 alt=""
                 width={44}
                 height={44}
@@ -126,7 +126,7 @@ export function Chatbot() {
         ) : (
           <img
             className="chatbot__toggle-image"
-            src="/images/chatbot-icon.jpg"
+            src="/images/chatbot-icon.png"
             alt=""
             width={72}
             height={72}

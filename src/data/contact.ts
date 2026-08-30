@@ -15,7 +15,7 @@ export const contactContent = {
     phonePlaceholder: '+91 98765 43210',
     subjectLabel: 'Enquiry Type',
     subjectPlaceholder: 'General Enquiry',
-    messageLabel: 'Your message',
+    messageLabel: 'Message',
     messagePlaceholder: 'How can we help you today?',
     submitLabel: 'Send',
     successTitle: 'Thank you for reaching out',

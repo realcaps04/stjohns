@@ -302,12 +302,12 @@ export function SendIcon({ className }: IconProps) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
       <path
-        d="m4.5 12 15-6.5-3 6.5 3 6.5-15-6.5 5.5 0Z"
+        d="m19.5 12-15-6.5 3 6.5-3 6.5 15-6.5-5.5 0Z"
         stroke="currentColor"
         strokeWidth="1.6"
         strokeLinejoin="round"
       />
-      <path d="M7 12h9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M7.5 12h9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
     </svg>
   )
 }
