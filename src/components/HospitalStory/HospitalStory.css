@@ -1,0 +1,313 @@
+.hospital-story {
+  position: relative;
+  padding: clamp(3rem, 6vw, 4.75rem) 0;
+  background: linear-gradient(180deg, #f4f7ff 0%, #f8faff 48%, #fff 100%);
+  scroll-margin-top: 8.15rem;
+  overflow: hidden;
+}
+
+.hospital-story__decor {
+  position: absolute;
+  pointer-events: none;
+}
+
+.hospital-story__decor--dots {
+  top: 1.25rem;
+  left: 2%;
+  width: min(8rem, 18vw);
+  height: min(8rem, 18vw);
+  background-image: radial-gradient(circle, rgba(1, 0, 145, 0.12) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+  opacity: 0.45;
+}
+
+.hospital-story__decor--wave {
+  right: -4%;
+  bottom: 10%;
+  width: min(18rem, 40vw);
+  height: min(10rem, 24vw);
+  background:
+    radial-gradient(ellipse at 70% 80%, rgba(123, 137, 255, 0.16), transparent 68%),
+    radial-gradient(ellipse at 40% 60%, rgba(1, 0, 145, 0.06), transparent 70%);
+}
+
+.hospital-story__inner {
+  width: min(calc(100% - 2rem), var(--max));
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.35rem);
+}
+
+.hospital-story__top {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  align-items: center;
+}
+
+.hospital-story__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.hospital-story__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.85rem 0.38rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(1, 0, 145, 0.14);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hospital-story__badge-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.hospital-story__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 2.8vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.03em;
+  color: var(--brand);
+  max-width: 22ch;
+}
+
+.hospital-story__pulse {
+  width: min(100%, 16rem);
+  height: auto;
+  color: var(--brand-mid);
+}
+
+.hospital-story__pulse-track,
+.hospital-story__pulse-path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hospital-story__pulse-track {
+  opacity: 0.2;
+}
+
+.hospital-story__body {
+  margin: 0;
+  font-size: clamp(0.92rem, 1.4vw, 0.98rem);
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 36rem;
+}
+
+.hospital-story__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+  padding: 0.72rem 1.2rem;
+  border-radius: 0.75rem;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  box-shadow: 0 10px 24px rgba(1, 0, 145, 0.18);
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.hospital-story__cta:hover {
+  transform: translateY(-2px);
+  background: var(--brand-deep);
+  box-shadow: var(--shadow-lift);
+}
+
+.hospital-story__cta-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.hospital-story__media {
+  min-width: 0;
+}
+
+.hospital-story__stats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.75rem, 2vw, 1rem);
+}
+
+.hospital-story-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.65rem;
+  padding: 1rem 0.75rem;
+  border-radius: 1rem;
+  background: #fff;
+  border: 1px solid rgba(1, 0, 145, 0.08);
+  box-shadow: 0 10px 24px rgba(1, 0, 145, 0.06);
+}
+
+.hospital-story-stat__glyph {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--brand);
+  background: linear-gradient(180deg, #eef2ff 0%, #e4ebff 100%);
+}
+
+.hospital-story-stat__icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.hospital-story-stat__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.hospital-story-stat__copy strong {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--brand);
+  letter-spacing: -0.02em;
+}
+
+.hospital-story-stat__copy span {
+  font-size: 0.72rem;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.hospital-story-mission {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+  padding: clamp(1rem, 2.4vw, 1.35rem) clamp(1rem, 2.8vw, 1.5rem);
+  border-radius: 1.15rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(231, 236, 251, 0.95) 100%);
+  border: 1px solid rgba(1, 0, 145, 0.08);
+  box-shadow: 0 10px 28px rgba(1, 0, 145, 0.06);
+}
+
+.hospital-story-mission__icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #eef2ff 0%, #e4ebff 100%);
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.hospital-story-mission__icon-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.hospital-story-mission__copy {
+  min-width: 0;
+}
+
+.hospital-story-mission__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 700;
+  color: var(--brand);
+  line-height: 1.25;
+}
+
+.hospital-story-mission__body {
+  margin: 0.25rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.hospital-story-mission__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.72rem 1.1rem;
+  border-radius: 0.75rem;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 10px 24px rgba(1, 0, 145, 0.18);
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.hospital-story-mission__cta:hover {
+  transform: translateY(-2px);
+  background: var(--brand-deep);
+}
+
+.hospital-story-mission__cta-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+@media (max-width: 1023px) {
+  .hospital-story__top {
+    grid-template-columns: 1fr;
+  }
+
+  .hospital-story__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .hospital-story {
+    scroll-margin-top: 6.9rem;
+  }
+
+  .hospital-story-mission {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .hospital-story-mission__cta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .hospital-story__stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 374px) {
+  .hospital-story__inner {
+    width: min(calc(100% - 1.25rem), var(--max));
+  }
+}

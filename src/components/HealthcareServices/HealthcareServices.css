@@ -1,0 +1,372 @@
+.healthcare-services {
+  position: relative;
+  padding: clamp(3rem, 6vw, 4.75rem) 0;
+  background: linear-gradient(180deg, #fff 0%, #f8faff 48%, #f4f7ff 100%);
+  scroll-margin-top: 8.15rem;
+  overflow: hidden;
+}
+
+.healthcare-services__decor {
+  position: absolute;
+  pointer-events: none;
+}
+
+.healthcare-services__decor--plus {
+  top: 1.5rem;
+  right: 4%;
+  width: min(8rem, 18vw);
+  height: min(8rem, 18vw);
+  opacity: 0.08;
+  background:
+    linear-gradient(var(--brand) 0 0) center/18% 100% no-repeat,
+    linear-gradient(var(--brand) 0 0) center/100% 18% no-repeat;
+}
+
+.healthcare-services__decor--dots {
+  top: 1.25rem;
+  left: 2%;
+  width: min(10rem, 22vw);
+  height: min(10rem, 22vw);
+  background-image: radial-gradient(circle, rgba(1, 0, 145, 0.12) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+  opacity: 0.45;
+}
+
+.healthcare-services__inner {
+  width: min(calc(100% - 2rem), var(--max));
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.35rem);
+}
+
+.healthcare-services__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.85rem;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.healthcare-services__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.85rem 0.38rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(1, 0, 145, 0.14);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.healthcare-services__badge-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.healthcare-services__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.healthcare-services__title-lead {
+  color: #000;
+}
+
+.healthcare-services__title-rest {
+  color: var(--brand);
+}
+
+.healthcare-services__pulse {
+  width: min(100%, 16rem);
+  height: auto;
+  color: var(--brand-mid);
+}
+
+.healthcare-services__pulse-track,
+.healthcare-services__pulse-path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.healthcare-services__pulse-track {
+  opacity: 0.2;
+}
+
+.healthcare-services__body {
+  font-size: clamp(0.92rem, 1.4vw, 0.98rem);
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.healthcare-services__marquee {
+  position: relative;
+  overflow: hidden;
+  margin-inline: calc(50% - 50vw);
+  width: 100vw;
+  mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 6%, #000 94%, transparent 100%);
+}
+
+.healthcare-services__track {
+  display: flex;
+  align-items: stretch;
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+  width: max-content;
+  padding-inline: clamp(0.85rem, 2vw, 1.15rem);
+  animation: healthcare-marquee 42s linear infinite;
+  will-change: transform;
+}
+
+.healthcare-services__marquee:hover .healthcare-services__track {
+  animation-play-state: paused;
+}
+
+@keyframes healthcare-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.healthcare-card {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 auto;
+  width: clamp(15.5rem, 24vw, 18.5rem);
+  border-radius: 1rem;
+  background: #fff;
+  border: 1px solid rgba(1, 0, 145, 0.08);
+  box-shadow: 0 10px 24px rgba(1, 0, 145, 0.07);
+  overflow: hidden;
+}
+
+.healthcare-card__media {
+  position: relative;
+  aspect-ratio: 4 / 2.85;
+  overflow: hidden;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.healthcare-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.healthcare-card__glyph {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin: -1.1rem auto 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid rgba(1, 0, 145, 0.1);
+  box-shadow: 0 6px 16px rgba(1, 0, 145, 0.1);
+  color: var(--brand);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.healthcare-card__glyph-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.healthcare-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem 0.9rem;
+}
+
+.healthcare-card__title {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--brand);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.healthcare-card__text {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3.1rem;
+}
+
+.healthcare-card__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin-top: 0.15rem;
+  padding: 0.42rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(1, 0, 145, 0.16);
+  background: #fff;
+  color: var(--brand);
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 600;
+  transition: background 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.healthcare-card__link:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
+.healthcare-card__link-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.healthcare-services__footer {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(0.85rem, 2vw, 1.25rem);
+  padding: clamp(1rem, 2.4vw, 1.35rem) clamp(1rem, 2.8vw, 1.5rem);
+  border-radius: 1.15rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(231, 236, 251, 0.95) 100%);
+  border: 1px solid rgba(1, 0, 145, 0.08);
+  box-shadow: 0 10px 28px rgba(1, 0, 145, 0.06);
+}
+
+.healthcare-services__footer-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #eef2ff 0%, #e4ebff 100%);
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.healthcare-services__footer-icon-svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.healthcare-services__footer-copy {
+  min-width: 0;
+}
+
+.healthcare-services__footer-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 700;
+  color: var(--brand);
+  line-height: 1.25;
+}
+
+.healthcare-services__footer-text {
+  margin: 0.25rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.healthcare-services__footer-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.72rem 1.1rem;
+  border-radius: 0.75rem;
+  background: var(--brand);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 10px 24px rgba(1, 0, 145, 0.18);
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.healthcare-services__footer-cta:hover {
+  transform: translateY(-2px);
+  background: var(--brand-deep);
+}
+
+.healthcare-services__footer-cta-icon {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+@media (max-width: 767px) {
+  .healthcare-services {
+    scroll-margin-top: 6.9rem;
+  }
+
+  .healthcare-services__track {
+    animation-duration: 34s;
+  }
+
+  .healthcare-services__footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .healthcare-services__footer-cta {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .healthcare-services__marquee {
+    mask-image: none;
+    -webkit-mask-image: none;
+    margin-inline: 0;
+    width: auto;
+    overflow: visible;
+  }
+
+  .healthcare-services__track {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    animation: none;
+    padding-inline: 0;
+  }
+
+  .healthcare-card {
+    width: min(100%, 18.5rem);
+  }
+}
+
+@media (max-width: 374px) {
+  .healthcare-services__inner {
+    width: min(calc(100% - 1.25rem), var(--max));
+  }
+}

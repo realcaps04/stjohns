@@ -1,0 +1,42 @@
+.logo {
+  height: 2.75rem;
+  width: auto;
+  max-width: min(14.5rem, 48vw);
+  display: block;
+  object-fit: contain;
+  object-position: left center;
+  flex-shrink: 0;
+  transition: filter 0.35s var(--ease), height 0.35s var(--ease);
+}
+
+.site-header.is-scrolled .logo {
+  height: 2.35rem;
+}
+
+@media (max-width: 1199px) and (min-width: 1100px) {
+  .logo {
+    height: 2.45rem;
+    max-width: 12.75rem;
+  }
+}
+
+@media (max-width: 1099px) {
+  .logo {
+    height: 2.85rem;
+    max-width: min(15.5rem, 58vw);
+  }
+}
+
+@media (max-width: 414px) {
+  .logo {
+    height: 2.45rem;
+    max-width: min(12rem, 62vw);
+  }
+}
+
+@media (max-width: 359px) {
+  .logo {
+    height: 2.25rem;
+    max-width: 10.75rem;
+  }
+}

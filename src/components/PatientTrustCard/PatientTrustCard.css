@@ -1,0 +1,72 @@
+.patient-trust {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.7rem 0.55rem 0.55rem;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.46) 0%,
+    rgba(243, 245, 255, 0.32) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  backdrop-filter: blur(22px) saturate(1.45);
+  -webkit-backdrop-filter: blur(22px) saturate(1.45);
+  box-shadow:
+    0 14px 36px rgba(1, 0, 145, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+}
+
+.patient-trust__avatars {
+  display: flex;
+  padding-left: 0.35rem;
+}
+
+.patient-trust__avatar {
+  width: 2.05rem;
+  height: 2.05rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--white);
+  margin-left: -0.4rem;
+  background: var(--mist);
+}
+
+.patient-trust__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.patient-trust__copy {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.patient-trust__copy strong {
+  font-size: 0.95rem;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+.patient-trust__copy span {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.patient-trust__check {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--brand);
+  flex-shrink: 0;
+}
+
+.patient-trust--flow {
+  width: 100%;
+  justify-content: flex-start;
+  border-radius: 1.15rem;
+  padding: 0.8rem 1rem;
+}

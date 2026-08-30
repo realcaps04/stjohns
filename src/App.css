@@ -1,0 +1,14 @@
+.page-section {
+  scroll-margin-top: 8.15rem;
+}
+
+#home {
+  scroll-margin-top: 8.15rem;
+}
+
+@media (max-width: 1099px) {
+  .page-section,
+  #home {
+    scroll-margin-top: 6.9rem;
+  }
+}

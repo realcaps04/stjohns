@@ -1,0 +1,45 @@
+.find-doctor-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 2.4rem;
+  height: 2.4rem;
+  padding: 0 1rem 0 0.85rem;
+  border-radius: 999px;
+  border: 1.5px solid var(--brand);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--brand);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.35s var(--ease), color 0.35s var(--ease);
+}
+
+.find-doctor-btn__icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.find-doctor-btn:hover {
+  transform: translateY(-2px);
+  background: var(--white);
+  box-shadow: 0 8px 18px rgba(1, 0, 145, 0.12);
+}
+
+.find-doctor-btn--full {
+  width: 100%;
+  min-height: 3.15rem;
+  height: auto;
+  font-size: 0.98rem;
+}
+
+.site-header.is-scrolled .find-doctor-btn {
+  min-height: 2.2rem;
+  height: 2.2rem;
+  font-size: 0.76rem;
+  padding: 0 0.9rem 0 0.75rem;
+}

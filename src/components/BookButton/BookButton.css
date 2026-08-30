@@ -1,0 +1,59 @@
+.book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 2.85rem;
+  padding: 0.55rem 1.15rem 0.55rem 0.95rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(1, 0, 145, 0.18);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background 0.25s var(--ease);
+}
+
+.book-btn__icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  transition: transform 0.25s var(--ease);
+}
+
+.book-btn:hover {
+  transform: translateY(-2px);
+  background: var(--brand-deep);
+  box-shadow: var(--shadow-lift);
+}
+
+.book-btn:hover .book-btn__icon {
+  transform: translateY(-1px);
+}
+
+.book-btn:active {
+  transform: translateY(0);
+}
+
+.book-btn--compact {
+  min-height: 2.6rem;
+  width: 2.6rem;
+  padding: 0;
+  gap: 0;
+}
+
+.book-btn--compact .book-btn__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.book-btn--full {
+  width: 100%;
+  min-height: 3.15rem;
+  font-size: 0.98rem;
+}

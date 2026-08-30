@@ -1,0 +1,201 @@
+.doctors {
+  position: relative;
+  padding: clamp(3rem, 6vw, 4.5rem) 0;
+  background: linear-gradient(180deg, #f8faff 0%, #fff 48%, #f7f9ff 100%);
+  scroll-margin-top: 8.15rem;
+  overflow: hidden;
+}
+
+.doctors__decor {
+  position: absolute;
+  pointer-events: none;
+}
+
+.doctors__decor--dots {
+  top: 1.25rem;
+  right: 2%;
+  width: min(10rem, 22vw);
+  height: min(10rem, 22vw);
+  background-image: radial-gradient(circle, rgba(1, 0, 145, 0.14) 1.2px, transparent 1.2px);
+  background-size: 14px 14px;
+  opacity: 0.5;
+}
+
+.doctors__decor--wave {
+  left: -5%;
+  bottom: 6%;
+  width: min(22rem, 48vw);
+  height: min(12rem, 28vw);
+  background:
+    radial-gradient(ellipse at 30% 80%, rgba(123, 137, 255, 0.2), transparent 68%),
+    radial-gradient(ellipse at 60% 60%, rgba(1, 0, 145, 0.06), transparent 70%);
+}
+
+.doctors__inner {
+  width: min(calc(100% - 2rem), var(--max));
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.doctors__header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(1.25rem, 4vw, 2.5rem);
+  align-items: start;
+}
+
+.doctors__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+.doctors__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.85rem 0.38rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(1, 0, 145, 0.14);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--brand);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.doctors__badge-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.doctors__title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+.doctors__title-lead {
+  color: #000;
+}
+
+.doctors__title-rest {
+  color: var(--brand);
+}
+
+.doctors__pulse {
+  width: min(100%, 16rem);
+  height: auto;
+  color: var(--brand-mid);
+}
+
+.doctors__pulse-track,
+.doctors__pulse-path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.doctors__pulse-track {
+  opacity: 0.2;
+}
+
+.doctors__body {
+  font-size: clamp(0.92rem, 1.4vw, 0.98rem);
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 34rem;
+  padding-top: 2.4rem;
+}
+
+.doctors__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(0.85rem, 2vw, 1.15rem);
+}
+
+.doctors__grid--all {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.doctors__footer {
+  display: flex;
+  justify-content: center;
+}
+
+.doctors__view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.35rem;
+  border-radius: 0.85rem;
+  border: 1.5px solid var(--brand);
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--brand);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.25s var(--ease), background 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.doctors__view-all:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  box-shadow: 0 10px 24px rgba(1, 0, 145, 0.1);
+}
+
+.doctors__view-all-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+@media (max-width: 1100px) {
+  .doctors__grid,
+  .doctors__grid--all {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1023px) {
+  .doctors__header {
+    grid-template-columns: 1fr;
+  }
+
+  .doctors__body {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .doctors {
+    scroll-margin-top: 6.9rem;
+  }
+
+  .doctors__grid,
+  .doctors__grid--all {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 479px) {
+  .doctors__grid,
+  .doctors__grid--all {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 374px) {
+  .doctors__inner {
+    width: min(calc(100% - 1.25rem), var(--max));
+  }
+}
