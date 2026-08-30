@@ -155,12 +155,6 @@ p {
   }
 }
 
-@media (max-width: 1099px) {
-  body {
-    padding-bottom: 4.5rem;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

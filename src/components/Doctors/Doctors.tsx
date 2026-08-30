@@ -51,6 +51,27 @@ export function Doctors() {
           ))}
         </div>
 
+        <div className="doctors__marquee" role="region" aria-label="Doctors carousel">
+          <div className="doctors__marquee-track">
+            {[0, 1].map((set) => (
+              <div
+                key={set}
+                className="doctors__marquee-set"
+                aria-hidden={set === 1 ? true : undefined}
+              >
+                {visibleDoctors.map((item) => (
+                  <DoctorCard
+                    key={`${set}-${item.id}`}
+                    doctor={item}
+                    bookLabel={bookLabel}
+                    bookHref={bookHref}
+                  />
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="doctors__footer">
           <button
             type="button"

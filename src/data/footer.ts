@@ -1,7 +1,8 @@
 export const footerContent = {
   logo: {
     src: 'https://stjohns.co.in/wp-content/uploads/2025/01/st.-johns-logo-final-white-1024x342.png',
-    alt: "St. John's Hospital, Kattappana — In the footsteps of St. John of God",
+    alt: "St. John's Hospital, Kattappana logo",
+    tagline: "St. John's Hospital, Kattappana — In the footsteps of St. John of God",
     href: '#home',
   },
   app: {
@@ -12,12 +13,12 @@ export const footerContent = {
       href: 'https://qrfy.io/r/0IMomoeXWb',
     },
     appStore: {
-      src: 'https://stjohns.co.in/wp-content/uploads/2025/01/app-store_white.png',
+      src: '/images/footer/stores/app-store-badge.svg',
       alt: 'Download on the App Store',
-      href: 'https://play.google.com/store/search?q=st%20johns%20hospital%20kattappana&c=apps',
+      href: 'https://apps.apple.com/us/search?term=st%20johns%20hospital%20kattappana',
     },
     googlePlay: {
-      src: 'https://stjohns.co.in/wp-content/uploads/2025/01/google-play-icon-lg_white-1024x1024.png',
+      src: '/images/footer/stores/google-play-badge.png',
       alt: 'Get it on Google Play',
       href: 'https://play.google.com/store/search?q=st%20johns%20hospital%20kattappana&c=apps',
     },

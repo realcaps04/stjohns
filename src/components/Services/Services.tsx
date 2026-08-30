@@ -40,6 +40,29 @@ function FeatureIcon({ icon }: { icon: ServiceFeatureIcon }) {
   return <CompassionIcon className={className} />
 }
 
+type Department = (typeof servicesContent.departments)[number]
+
+function ServiceCard({ dept }: { dept: Department }) {
+  return (
+    <article className="service-card">
+      <div className="service-card__media">
+        <img src={dept.image} alt={dept.imageAlt} loading="lazy" />
+        <span className="service-card__glyph" aria-hidden="true">
+          <DeptIcon icon={dept.icon} />
+        </span>
+      </div>
+      <div className="service-card__body">
+        <h3 className="service-card__title">{dept.title}</h3>
+        <p className="service-card__text">{dept.description}</p>
+        <a className="service-card__link" href={dept.href}>
+          Learn More
+          <ArrowRightIcon className="service-card__link-icon" />
+        </a>
+      </div>
+    </article>
+  )
+}
+
 export function Services() {
   const { badge, titleLead, titleRest, body, ctaLabel, ctaHref, departments, features } = servicesContent
 
@@ -73,23 +96,24 @@ export function Services() {
 
           <div className="services__cards">
             {departments.map((dept) => (
-              <article key={dept.id} className="service-card">
-                <div className="service-card__media">
-                  <img src={dept.image} alt={dept.imageAlt} loading="lazy" />
-                  <span className="service-card__glyph" aria-hidden="true">
-                    <DeptIcon icon={dept.icon} />
-                  </span>
-                </div>
-                <div className="service-card__body">
-                  <h3 className="service-card__title">{dept.title}</h3>
-                  <p className="service-card__text">{dept.description}</p>
-                  <a className="service-card__link" href={dept.href}>
-                    Learn More
-                    <ArrowRightIcon className="service-card__link-icon" />
-                  </a>
-                </div>
-              </article>
+              <ServiceCard key={dept.id} dept={dept} />
             ))}
+          </div>
+
+          <div className="services__marquee" role="region" aria-label="Services carousel">
+            <div className="services__marquee-track">
+              {[0, 1].map((set) => (
+                <div
+                  key={set}
+                  className="services__marquee-set"
+                  aria-hidden={set === 1 ? true : undefined}
+                >
+                  {departments.map((dept) => (
+                    <ServiceCard key={`${set}-${dept.id}`} dept={dept} />
+                  ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

@@ -77,6 +77,7 @@ export function Footer() {
             <a className="site-footer__logo" href={logo.href}>
               <img src={logo.src} alt={logo.alt} loading="lazy" decoding="async" />
             </a>
+            <p className="site-footer__tagline">{logo.tagline}</p>
             <p className="site-footer__app-text">{app.text}</p>
             <div className="site-footer__app-row">
               <a className="site-footer__qr" href={app.qr.href} target="_blank" rel="noreferrer">
