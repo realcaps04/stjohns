@@ -8,7 +8,10 @@ export const contact = {
   phone: '04868 257 000',
   phoneHref: 'tel:+914868257000',
   email: 'info@stjohns.co.in',
+  emailHref: 'mailto:info@stjohns.co.in',
   location: 'Kattappana, Idukki',
+  locationHref:
+    'https://www.google.com/maps/dir//ST+JOHNS+HOSPITAL+Kattappana,+Kerala+685515/@9.746985,77.1097959,10z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3b07a9565907dbdd:0x3d3acbc5e35d2abf!2m2!1d77.1097959!2d9.746985',
 }
 
 export const navLinks = [
