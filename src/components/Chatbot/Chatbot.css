@@ -270,10 +270,19 @@
   height: 1rem;
 }
 
+@media (max-width: 1099px) {
+  .chatbot {
+    bottom: calc(3.85rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .chatbot__panel {
+    max-height: min(32rem, calc(100vh - 10rem));
+  }
+}
+
 @media (max-width: 544px) {
   .chatbot {
     right: 0.85rem;
-    bottom: 2rem;
   }
 
   .chatbot__toggle {

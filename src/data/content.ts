@@ -12,11 +12,11 @@ export const contact = {
 }
 
 export const navLinks = [
-  { id: 'home', label: 'Home', href: '#home' },
-  { id: 'about', label: 'About Us', href: '#about' },
-  { id: 'services', label: 'Services', href: '#services' },
-  { id: 'departments', label: 'Departments', href: '#departments' },
-  { id: 'contact', label: 'Contact Us', href: '#contact' },
+  { id: 'home', label: 'Home', shortLabel: 'Home', href: '#home' },
+  { id: 'about', label: 'About Us', shortLabel: 'About', href: '#about' },
+  { id: 'services', label: 'Services', shortLabel: 'Services', href: '#services' },
+  { id: 'departments', label: 'Departments', shortLabel: 'Depts', href: '#departments' },
+  { id: 'contact', label: 'Contact Us', shortLabel: 'Contact', href: '#contact' },
 ] as const
 
 export type NavLink = (typeof navLinks)[number]

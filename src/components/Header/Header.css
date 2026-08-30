@@ -207,75 +207,11 @@
   transform: scale(1.06);
 }
 
-.mobile-nav {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-}
-
-.mobile-nav[hidden] {
+.mobile-tab-nav {
   display: none;
-}
-
-.mobile-nav__panel {
-  position: absolute;
-  inset: 0;
-  padding: 6.85rem 1.4rem 1.6rem;
-  background: linear-gradient(180deg, #f7f8ff 0%, #eef2ff 100%);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.mobile-nav__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: grid;
-  gap: 0.05rem;
-  overflow-y: auto;
-  flex: 1;
-  min-height: 0;
-}
-
-.mobile-nav__link {
-  display: block;
-  padding: 0.7rem 0.2rem;
-  text-decoration: none;
-  color: var(--ink);
-  font-size: clamp(1.15rem, 5vw, 1.45rem);
-  font-family: var(--font-display);
-  font-weight: 600;
-  border-bottom: 1px solid rgba(1, 0, 145, 0.08);
-  border-left: 3px solid transparent;
-  transition:
-    color 0.28s var(--ease),
-    padding-left 0.28s var(--ease),
-    border-color 0.28s var(--ease),
-    background 0.28s var(--ease);
-}
-
-.mobile-nav__link[aria-current='page'] {
-  color: var(--brand);
-  padding-left: 0.7rem;
-  border-left-color: var(--brand);
-}
-
-.mobile-nav__cta {
-  display: grid;
-  gap: 0.65rem;
-  margin-top: auto;
-}
-
-.mobile-nav__book {
-  margin-top: 0;
 }
 
 .header-actions__book--mobile {
-  display: none;
-}
-
-.mobile-book-bar {
   display: none;
 }
 
@@ -334,27 +270,60 @@
     height: 0.85rem;
   }
 
-  .icon-btn {
-    background: rgba(255, 255, 255, 0.88);
-    border-color: rgba(1, 0, 145, 0.18);
-    box-shadow: 0 4px 14px rgba(1, 0, 145, 0.07);
-    color: var(--brand);
+  .mobile-tab-nav {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 75;
+    padding: 0.4rem 0.35rem calc(0.4rem + env(safe-area-inset-bottom, 0px));
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    border-top: 1px solid rgba(1, 0, 145, 0.1);
+    box-shadow: 0 -8px 24px rgba(1, 0, 145, 0.08);
   }
 
-  .site-header:not(.is-scrolled) .icon-btn {
-    background: rgba(255, 255, 255, 0.14);
-    border-color: rgba(255, 255, 255, 0.42);
-    color: #fff;
-    box-shadow: none;
+  .mobile-tab-nav__list {
+    display: flex;
+    align-items: stretch;
+    gap: 0.15rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mobile-tab-nav__list li {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .mobile-tab-nav__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.65rem;
+    padding: 0.35rem 0.2rem;
+    border-radius: 0.65rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.64rem;
+    font-weight: 600;
+    line-height: 1.2;
+    transition:
+      color 0.25s var(--ease),
+      background 0.25s var(--ease);
+  }
+
+  .mobile-tab-nav__link[aria-current='page'] {
+    color: var(--brand);
+    background: rgba(1, 0, 145, 0.08);
   }
 }
 
 @media (max-width: 414px) {
-  .icon-btn {
-    width: 2.4rem;
-    height: 2.4rem;
-  }
-
   .header-actions {
     gap: 0.4rem;
   }
@@ -366,6 +335,10 @@
 
   .header-actions .header-actions__book--mobile .book-btn__icon {
     display: none;
+  }
+
+  .mobile-tab-nav__link {
+    font-size: 0.6rem;
   }
 }
 

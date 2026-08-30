@@ -1,9 +1,8 @@
-import { useEffect, useId, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { navLinks } from '../../data/content'
 import { scrollToElement } from '../../lib/smoothScroll'
 import { BookButton } from '../BookButton/BookButton'
 import { FindDoctorButton } from '../FindDoctorButton/FindDoctorButton'
-import { CloseIcon, MenuIcon } from '../icons'
 import { Logo } from '../Logo/Logo'
 import { TopBar } from '../TopBar/TopBar'
 import './Header.css'
@@ -11,13 +10,8 @@ import './Header.css'
 export function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [atBottom, setAtBottom] = useState(false)
-  const [menuOpen, setMenuOpen] = useState(false)
   const [activeId, setActiveId] = useState('home')
   const [indicator, setIndicator] = useState({ x: 0, width: 0, visible: false })
-  const [isDesktop, setIsDesktop] = useState(() =>
-    typeof window !== 'undefined' ? window.matchMedia('(min-width: 1100px)').matches : false,
-  )
-  const menuTitleId = useId()
   const navListRef = useRef<HTMLUListElement>(null)
 
   const moveIndicatorTo = (el: Element | null) => {
@@ -60,30 +54,6 @@ export function Header() {
   }, [])
 
   useEffect(() => {
-    document.body.classList.toggle('is-locked', menuOpen)
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMenuOpen(false)
-    }
-    window.addEventListener('keydown', onKey)
-    return () => {
-      document.body.classList.remove('is-locked')
-      window.removeEventListener('keydown', onKey)
-    }
-  }, [menuOpen])
-
-  useEffect(() => {
-    const media = window.matchMedia('(min-width: 1100px)')
-    const sync = () => {
-      const desktop = media.matches
-      setIsDesktop(desktop)
-      if (desktop) setMenuOpen(false)
-    }
-    sync()
-    media.addEventListener('change', sync)
-    return () => media.removeEventListener('change', sync)
-  }, [])
-
-  useEffect(() => {
     const onResize = () => syncIndicator()
     syncIndicator()
     const list = navListRef.current
@@ -95,7 +65,7 @@ export function Header() {
       observer.disconnect()
       window.removeEventListener('resize', onResize)
     }
-  }, [activeId, isDesktop, scrolled])
+  }, [activeId, scrolled])
 
   useEffect(() => {
     const observed = navLinks
@@ -122,7 +92,6 @@ export function Header() {
 
   const goTo = (id: string, href: string) => {
     setActiveId(id)
-    setMenuOpen(false)
     scrollToElement(href)
     window.history.replaceState(null, '', href)
   }
@@ -131,12 +100,7 @@ export function Header() {
     <>
       <TopBar />
       <header
-        className={[
-          'site-header',
-          scrolled ? 'is-scrolled' : '',
-          atBottom && !menuOpen ? 'is-hidden' : '',
-          menuOpen ? 'is-overlay-open' : '',
-        ]
+        className={['site-header', scrolled ? 'is-scrolled' : '', atBottom ? 'is-hidden' : '']
           .filter(Boolean)
           .join(' ')}
       >
@@ -195,59 +159,29 @@ export function Header() {
               className="header-actions__book header-actions__book--mobile"
               label="Book my appointment"
             />
-
-            {!isDesktop && (
-              <button
-                type="button"
-                className="icon-btn header-actions__menu"
-                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={menuOpen}
-                aria-controls="mobile-nav"
-                onClick={() => setMenuOpen((open) => !open)}
-              >
-                {menuOpen ? <CloseIcon className="icon-btn__glyph" /> : <MenuIcon className="icon-btn__glyph" />}
-              </button>
-            )}
           </div>
         </div>
       </header>
 
-      <div className={`mobile-nav ${menuOpen ? 'is-open' : ''}`} id="mobile-nav" hidden={!menuOpen}>
-        <div
-          className="mobile-nav__panel"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby={menuTitleId}
-        >
-          <h2 id={menuTitleId} className="sr-only">
-            Site menu
-          </h2>
-          <nav aria-label="Mobile">
-            <ul className="mobile-nav__list">
-              {navLinks.map((link) => (
-                <li key={link.id}>
-                  <a
-                    className="mobile-nav__link"
-                    href={link.href}
-                    aria-current={link.id === activeId ? 'page' : undefined}
-                    onClick={(event) => {
-                      event.preventDefault()
-                      goTo(link.id, link.href)
-                    }}
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div className="mobile-nav__cta">
-            <FindDoctorButton full />
-            <BookButton full className="mobile-nav__book" />
-          </div>
-        </div>
-      </div>
-
+      <nav className="mobile-tab-nav" aria-label="Mobile primary">
+        <ul className="mobile-tab-nav__list">
+          {navLinks.map((link) => (
+            <li key={link.id}>
+              <a
+                className="mobile-tab-nav__link"
+                href={link.href}
+                aria-current={link.id === activeId ? 'page' : undefined}
+                onClick={(event) => {
+                  event.preventDefault()
+                  goTo(link.id, link.href)
+                }}
+              >
+                {link.shortLabel}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
     </>
   )
 }
