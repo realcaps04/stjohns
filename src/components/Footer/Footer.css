@@ -434,6 +434,12 @@
   }
 }
 
+@media (max-width: 1099px) {
+  .site-footer__bar {
+    padding-bottom: calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 @media (max-width: 767px) {
   .site-footer__inner {
     padding-top: 2.25rem;

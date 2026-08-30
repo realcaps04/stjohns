@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { navLinks } from '../../data/content'
 import { scrollToElement } from '../../lib/smoothScroll'
 import { BookButton } from '../BookButton/BookButton'
@@ -163,25 +164,28 @@ export function Header() {
         </div>
       </header>
 
-      <nav className="mobile-tab-nav" aria-label="Mobile primary">
-        <ul className="mobile-tab-nav__list">
-          {navLinks.map((link) => (
-            <li key={link.id}>
-              <a
-                className="mobile-tab-nav__link"
-                href={link.href}
-                aria-current={link.id === activeId ? 'page' : undefined}
-                onClick={(event) => {
-                  event.preventDefault()
-                  goTo(link.id, link.href)
-                }}
-              >
-                {link.shortLabel}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+      {createPortal(
+        <nav className="mobile-tab-nav" aria-label="Mobile primary">
+          <ul className="mobile-tab-nav__list">
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <a
+                  className="mobile-tab-nav__link"
+                  href={link.href}
+                  aria-current={link.id === activeId ? 'page' : undefined}
+                  onClick={(event) => {
+                    event.preventDefault()
+                    goTo(link.id, link.href)
+                  }}
+                >
+                  {link.shortLabel}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>,
+        document.body,
+      )}
     </>
   )
 }
